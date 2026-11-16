@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Auto — Магазин автохімії</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">DETAIL<span>AUTO</span></a>
+
+    <div class="header-right">
+        <a href="tel:+380991234567" class="phone">+38 (099) 123-45-67</a>
+        <button class="cart-button" onclick="openCart()">
+            <span>Кошик</span>
+            <span class="cart-number" id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+
+<nav class="navigation">
+    <a href="index.html" class="active">Головна</a>
+    <a href="#products">Каталог</a>
+    <a href="#brands">Бренди</a>
+    <a href="lr1.html">Лабораторна 1</a>
+    <a href="lr2.html">Лабораторна 2</a>
+    <a href="lr3.html">Лабораторна 3</a>
+    <a href="lr4.html">Лабораторна 4</a>
+    <a href="lr5.html">Лабораторна 5</a>
+    <a href="lr6.html">Лабораторна 6</a>
+    <a href="lr7.html">Лабораторна 7</a>
+    <a href="lr8.html">Лабораторна 8</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-label">ПРОФЕСІЙНИЙ АВТОДЕТЕЙЛІНГ</span>
+        <h1>ДОГЛЯД ЗА АВТОМОБІЛЕМ<br>
+            <span>НА НОВОМУ РІВНІ</span>
+        </h1>
+        <p>
+            Професійна автохімія та засоби для догляду.
+            Чистота, захист і бездоганний вигляд вашого автомобіля.
+        </p>
+        <a href="#products" class="main-button">Переглянути каталог →</a>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-circle"></div>
+        <div class="hero-car-text">DETAIL<br><span>AUTO</span></div>
+        <div class="hero-caption">CARE • PROTECTION • STYLE</div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="benefit">
+        <span class="benefit-icon">✦</span>
+        <div><strong>Якісна автохімія</strong><small>Перевірені бренди</small></div>
+    </div>
+    <div class="benefit">
+        <span class="benefit-icon">◈</span>
+        <div><strong>Професійний догляд</strong><small>Для салону та кузова</small></div>
+    </div>
+    <div class="benefit">
+        <span class="benefit-icon">✓</span>
+        <div><strong>Великий вибір</strong><small>Засоби для детейлінгу</small></div>
+    </div>
+</section>
+
+<section class="brands-section" id="brands">
+    <span class="small-label">НАШІ ПАРТНЕРИ</span>
+    <div class="brands">
+        <span>KOCH CHEMIE</span>
+        <span>SOFT99</span>
+        <span>CHEMICAL PRO</span>
+        <span>NOVAX</span>
+        <span>TENZI</span>
+        <span>GYEON</span>
+    </div>
+</section>
+
+<main class="main-layout">
+
+    <aside class="sidebar">
+        <span class="small-label">АСОРТИМЕНТ</span>
+        <h2>Категорії</h2>
+
+        <a href="#products">Усі товари</a>
+        <a href="#products" onclick="filterCategory('шампунь')">Автошампуні</a>
+        <a href="#products" onclick="filterCategory('очищувач')">Очищувачі</a>
+        <a href="#products" onclick="filterCategory('пластик')">Догляд за пластиком</a>
+        <a href="#products" onclick="filterCategory('салон')">Засоби для салону</a>
+        <a href="#products" onclick="filterCategory('кераміч')">Керамічні покриття</a>
+        <a href="#products" onclick="filterCategory('захист')">Захист кузова</a>
+
+        <div class="side-banner">
+            <span>DETAIL AUTO</span>
+            <h3>Деталі мають значення</h3>
+            <p>Професійний догляд за кожним елементом автомобіля.</p>
+        </div>
+    </aside>
+
+    <section class="catalog" id="products">
+
+        <div class="section-heading">
+            <div>
+                <span class="small-label">ОБИРАЙ НАЙКРАЩЕ</span>
+                <h2>Популярні товари</h2>
+                <p>Засоби для професійного догляду за автомобілем</p>
+            </div>
+            <span class="catalog-count">12 товарів</span>
+        </div>
+
+        <div class="catalog-tools">
+            <input type="text" id="searchInput" placeholder="⌕  Пошук товару...">
+
+            <select id="brandFilter">
+                <option value="all">Усі бренди</option>
+                <option value="Koch Chemie">Koch Chemie</option>
+                <option value="Soft99">Soft99</option>
+                <option value="Chemical Pro">Chemical Pro</option>
+                <option value="Novax">Novax</option>
+                <option value="Tenzi">Tenzi</option>
+                <option value="Gyeon">Gyeon</option>
+            </select>
+        </div>
+
+        <div class="cart-summary">
+            <span>У кошику: <strong id="cartCountText">0</strong> товарів</span>
+            <button onclick="openCart()">Переглянути кошик →</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+           
+<article class="product-card" data-brand="Koch Chemie">
+    <div class="product-photo">
+        <span class="product-tag">ПОПУЛЯРНЕ</span>
+        <a href="product.html">
+            <img src="images/koch-green-star.jpg" alt="Koch Chemie Green Star">
+        </a>
+    </div>
+
+    <div class="product-info">
+        <span class="product-brand">KOCH CHEMIE</span>
+        <h3>
+            <a href="product.html">Green Star</a>
+        </h3>
+        <p>Універсальний очищувач, 1 л</p>
+
+        <div class="product-bottom">
+            <strong>455 грн</strong>
+            <button onclick="addToCart(this)">Купити</button>
+        </div>
+    </div>
+</article>
+
+            
+<article class="product-card" data-brand="Soft99">
+    <div class="product-photo">
+        <a href="product.html?id=soft99-fusso">
+            <img src="images/soft99-fusso.jpg" alt="Soft99 Fusso Coat">
+        </a>
+    </div>
+
+    <div class="product-info">
+        <span class="product-brand">SOFT99</span>
+        <h3>
+            <a href="product.html?id=soft99-fusso">Fusso Coat</a>
+        </h3>
+        <p>Твердий захисний віск</p>
+        <div class="product-bottom">
+            <strong>1805 грн</strong>
+            <button onclick="addToCart(this)">Купити</button>
+        </div>
+    </div>
+</article>
+
+<article class="product-card" data-brand="Soft99">
+    <div class="product-photo">
+        <a href="product.html?id=soft99-glaco">
+            <img src="images/soft99-glaco.jpg" alt="Soft99 Glaco">
+        </a>
+    </div>
+
+    <div class="product-info">
+        <span class="product-brand">SOFT99</span>
+        <h3>
+            <a href="product.html?id=soft99-glaco">Glaco De Cleaner</a>
+        </h3>
+        <p>Очищувач скла з гідрофобним ефектом</p>
+        <div class="product-bottom">
+            <strong>625 грн</strong>
+            <button onclick="addToCart(this)">Купити</button>
+        </div>
+    </div>
+</article>
+
+
+            <article class="product-card" data-brand="Chemical Pro">
+                <div class="product-photo">
+                    <img src="images/chemical-plastic-restoration.jpg" alt="Chemical Pro Plastic Restoration">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">CHEMICAL PRO</span>
+                    <h3>Plastic Restoration</h3>
+                    <p>Відновник зовнішнього пластику, 1 л</p>
+                    <div class="product-bottom">
+                        <strong>715 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Chemical Pro">
+                <div class="product-photo">
+                    <img src="images/chemical-matte-gloss.jpg" alt="Chemical Pro Matte Gloss">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">CHEMICAL PRO</span>
+                    <h3>Matte Gloss</h3>
+                    <p>Засіб для догляду за пластиком салону</p>
+                    <div class="product-bottom">
+                        <strong>235 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Novax">
+                <div class="product-photo">
+                    <img src="images/novax-car-wash.jpg" alt="Novax Car Wash Shampoo">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">NOVAX</span>
+                    <h3>Car Wash Shampoo</h3>
+                    <p>Автомобільний шампунь, 1 л</p>
+                    <div class="product-bottom">
+                        <strong>147 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Novax">
+                <div class="product-photo">
+                    <img src="images/novax-cockpit-milk.jpg" alt="Novax Cockpit Milk">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">NOVAX</span>
+                    <h3>Cockpit Milk</h3>
+                    <p>Поліроль панелі приладів</p>
+                    <div class="product-bottom">
+                        <strong>175 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Tenzi">
+                <div class="product-photo">
+                    <img src="images/tenzi-ad39.jpg" alt="Tenzi Leather Conditioner AD-39">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">TENZI</span>
+                    <h3>Leather Conditioner AD-39</h3>
+                    <p>Кондиціонер для догляду за шкірою, 300 мл</p>
+                    <div class="product-bottom">
+                        <strong>658 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Tenzi">
+                <div class="product-photo">
+                    <img src="images/tenzi-clean-cockpit.jpg" alt="Tenzi Clean Cockpit">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">TENZI</span>
+                    <h3>Clean Cockpit</h3>
+                    <p>Очищувач салону, 600 мл</p>
+                    <div class="product-bottom">
+                        <strong>232 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Gyeon">
+                <div class="product-photo">
+                    <span class="product-tag">КЕРАМІКА</span>
+                    <img src="images/gyeon-one-evo.jpg" alt="Gyeon Q2 One EVO">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">GYEON</span>
+                    <h3>Q² One EVO</h3>
+                    <p>Керамічне покриття, 30 мл</p>
+                    <div class="product-bottom">
+                        <strong>1974 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Gyeon">
+                <div class="product-photo">
+                    <span class="product-tag">ЗАХИСТ</span>
+                    <img src="images/gyeon-cancoat.jpg" alt="Gyeon Q2 CanCoat EVO">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">GYEON</span>
+                    <h3>Q² CanCoat EVO</h3>
+                    <p>Захисне покриття, 200 мл</p>
+                    <div class="product-bottom">
+                        <strong>2852 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" data-brand="Gyeon">
+                <div class="product-photo">
+                    <img src="images/gyeon-bathe.jpg" alt="Gyeon Q2M Bathe Essence">
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">GYEON</span>
+                    <h3>Q²M Bathe Essence</h3>
+                    <p>Автомобільний шампунь, 1 л</p>
+                    <div class="product-bottom">
+                        <strong>2300 грн</strong>
+                        <button onclick="addToCart(this)">Купити</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="no-results" id="noResults">Товарів не знайдено.</p>
+    </section>
+</main>
+
+<footer class="footer">
+    <a href="index.html" class="logo">DETAIL<span>AUTO</span></a>
+    <p>Магазин професійної автохімії та товарів для детейлінгу</p>
+    <p>Виконав: Бондар Максим, група 2381</p>
+    <p>© 2026 DETAIL AUTO</p>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+    <div class="cart-modal" onclick="event.stopPropagation()">
+        <div class="cart-heading">
+            <h2>Ваш кошик</h2>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+            <span>Разом:</span>
+            <strong id="cartTotal">0 грн</strong>
+        </div>
+        <button class="checkout-button" onclick="checkout()">Оформити замовлення</button>
+        <button class="continue-button" onclick="closeCart()">Продовжити покупки</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

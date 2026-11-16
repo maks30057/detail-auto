@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар — Detail Auto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo">DETAIL <span>AUTO</span></a>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="index.html#catalog">Каталог</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container product-page">
+    <p><a href="index.html">Головна</a> / Каталог / Товар</p>
+
+    <div class="product-detail">
+        <div class="product-detail-image">
+            <img id="product-image" src="" alt="">
+        </div>
+
+        <div class="product-detail-info">
+            <p class="product-brand" id="product-brand"></p>
+            <h1 id="product-name"></h1>
+            <p id="product-description"></p>
+
+            <h2>Характеристики</h2>
+            <ul id="product-features"></ul>
+
+            <h2 id="product-price"></h2>
+
+            <button id="buy-button" onclick="buyCurrentProduct()">
+                Купити
+            </button>
+
+            <p><a href="index.html">← Повернутися до каталогу</a></p>
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+<script>
+const products = {
+    "koch-green-star": {
+        brand: "KOCH CHEMIE",
+        name: "Green Star",
+        description: "Універсальний очищувач для автомобіля.",
+        image: "images/koch-green-star.jpg",
+        price: 455,
+        features: ["Бренд: Koch Chemie", "Об'єм: 1 л", "Тип: універсальний очищувач"]
+    },
+    "soft99-fusso": {
+        brand: "SOFT99",
+        name: "Fusso Coat",
+        description: "Твердий захисний віск для кузова автомобіля.",
+        image: "images/soft99-fusso.jpg",
+        price: 1805,
+        features: ["Бренд: Soft99", "Тип: захисний віск", "Призначення: захист кузова"]
+    },
+    "soft99-glaco": {
+        brand: "SOFT99",
+        name: "Glaco De Cleaner",
+        description: "Очищувач скла з гідрофобним ефектом.",
+        image: "images/soft99-glaco.jpg",
+        price: 625,
+        features: ["Бренд: Soft99", "Тип: очищувач скла", "Ефект: відштовхування води"]
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id") || "koch-green-star";
+const product = products[id];
+
+if (product) {
+    document.title = product.name + " — Detail Auto";
+    document.getElementById("product-brand").textContent = product.brand;
+    document.getElementById("product-name").textContent = product.name;
+    document.getElementById("product-description").textContent = product.description;
+    document.getElementById("product-image").src = product.image;
+    document.getElementById("product-image").alt = product.name;
+    document.getElementById("product-price").textContent = product.price + " грн";
+
+    product.features.forEach(feature => {
+        const li = document.createElement("li");
+        li.textContent = feature;
+        document.getElementById("product-features").appendChild(li);
+    });
+} else {
+    document.querySelector(".product-detail").innerHTML =
+        "<h2>Товар не знайдено</h2><a href='index.html'>Повернутися до каталогу</a>";
+}
+
+function buyCurrentProduct() {
+    if (!product) return;
+
+    const button = document.createElement("button");
+    button.dataset.name = product.name;
+    button.dataset.price = product.price;
+    button.dataset.image = product.image;
+
+    addToCart(button);
+}
+</script>
+
+</body>
+</html>
